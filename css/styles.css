@@ -1,0 +1,15 @@
+body{
+    background-color: #ccddee;
+}
+.container{
+    width:1320px;
+    background-color: azure;
+    margin:auto auto;
+    min-height:500px;
+}
+.row{height:5px}
+.col100{width:100%;}
+.col75{width:75%; float:left;}
+.col50{width:50%; float:left;}
+.col25{width:25%; float:left;}
+.clear{clear:both;}
