@@ -3,9 +3,17 @@
    if($_SERVER['REQUEST_METHOD']=='POST')
    {
        $uname = $_POST['username'];
-       $upass = $_POST['password'];
+       $upass = $_POST['password']; 
+       //SQL Statement
+       $sql = "SELECT * FROM users WHERE username='$uname' and password='$upass'";
 
-       if($uname=='admin' && $upass=='admin123')
+       //making connection
+       include('inc_connection.php');
+
+       //executing the query
+       $qry=mysqli_query($conn, $sql) or die(mysqli_error($conn));
+       $count=mysqli_num_rows($qry);
+       if($count==1)
        {
            header("Location: dashboard.php");
        }
